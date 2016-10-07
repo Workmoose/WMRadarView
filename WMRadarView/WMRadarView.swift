@@ -1,5 +1,5 @@
 //
-//  RadarView.swift
+//  WMRadarView.swift
 //
 //  Created by Jaap Wijnen on 16/09/2016.
 //
@@ -22,25 +22,25 @@ class WMRadarView: UIView {
     var deltaAlpha: CGFloat = 2.5 { didSet { setup() } }
     var animationDuration: Double = 3.5 { didSet { setup() } }
     var animationOptions: UIViewAnimationOptions = [.curveEaseOut] { didSet { setup() } }
-    
+
     var radius: CGFloat {
         return frame.width / 2
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setup() {
         for view in self.subviews {
             view.removeFromSuperview()
         }
-        
+
         for _ in 0..<numberOfWaves {
             let circle = UIView(frame: CGRect.zero)
             circle.center = self.center
@@ -50,7 +50,7 @@ class WMRadarView: UIView {
             self.addSubview(circle)
         }
     }
-    
+
     func startAnimation() {
         let views = self.subviews
         for (index, view) in views.enumerated() {
