@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WMRadarView'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'A simple customizable radarView written in Swift 3'
 
   s.description      = <<-DESC
